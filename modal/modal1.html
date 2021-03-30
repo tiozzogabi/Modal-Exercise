@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal 1</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      div.container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+      }
+
+      .modal {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(47, 153, 47, 0.699);
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-content {
+        background-color: rgb(233, 233, 233);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0.5rem 2rem;
+        
+      }
+      .modal-text {
+          margin-right: 5rem;
+          font-weight: bold;
+          font-family: sans-serif;
+      }
+      .btn-close {
+        border: none;
+        background-color: red;
+        color: #fff;
+        border-radius: 5px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 0px;
+        align-self: flex-start;
+        cursor: pointer;
+      }
+      .btn-close:hover {
+          background-color: rgb(255, 28, 7);
+      }
+      .btn-open {
+          border: none;
+          padding: 1rem;
+          border-radius: 5px;
+          background-color: rgb(137, 96, 233);
+          color: white;font-weight: bold;
+          cursor: pointer;
+      }
+      .btn-open:hover {
+        background-color: rgb(176, 92, 255);
+      }
+
+      p.description {
+          font-family: sans-serif;
+          font-size: 13px;
+          margin-top: 5rem;
+      }
+      
+      .next-page {
+        text-decoration: none;
+        font-size: 2rem;
+        background-color: rgb(219, 57, 157);
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        color:  white;
+        font-weight: bolder;
+      }
+      .next-page:hover {
+          background-color: rgb(255, 96, 194);
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="modal">
+      <div class="modal-content">
+        <p class="modal-text" >Hello, I am a Modal.</p>
+        <button class="btn-close" onclick="closeModal()">x</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <button class="btn-open" type="button" onclick="openModal()">
+        Click to open
+      </button>
+      <p class="description">Next Page</p>
+      <a href="modal2.html" class="next-page">></a>
+    </div>
+
+    <script>
+      function openModal() {
+        var modal = document.querySelector(".modal");
+        modal.style.display = "flex";
+        console.log(modal);
+      }
+      function closeModal() {
+        var modal = document.querySelector(".modal");
+        modal.style.display = "none";
+        console.log(modal);
+      }
+    </script>
+  </body>
+</html>
